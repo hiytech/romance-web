@@ -30,10 +30,10 @@ public class SearchTests extends BaseUI {
     public void testFindPeople() {
         driver.findElement(Locators.LINK_SEARCH).click();
         wait.until(ExpectedConditions.elementToBeClickable(Locators.SEARCH_BUTTON));
-        getDropDownListByValue(Locators.DROP_DOWN_AGE_MIN, "19");
-        getDropDownListByValue(Locators.DROP_DOWN_AGE_MAX, "39");
+        getDropDownListByValue(Locators.DROP_DOWN_AGE_MIN, "35");
+        getDropDownListByValue(Locators.DROP_DOWN_AGE_MAX, "55");
         driver.findElement(Locators.SEARCH_BUTTON).submit();
-        driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(4,TimeUnit.SECONDS);
         getDropDownListByText(Locators.DROP_DOWN_LIST_SORT_BY, "Views");
     }
 
