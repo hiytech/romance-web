@@ -1,3 +1,4 @@
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -26,13 +27,13 @@ public class SearchTests extends BaseUI {
     }
 
     @Test
-    public void testFindPeople() throws InterruptedException {
+    public void testFindPeople() {
         driver.findElement(Locators.LINK_SEARCH).click();
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(Locators.SEARCH_BUTTON));
         getDropDownListByValue(Locators.DROP_DOWN_AGE_MIN, "19");
         getDropDownListByValue(Locators.DROP_DOWN_AGE_MAX, "39");
         driver.findElement(Locators.SEARCH_BUTTON).submit();
-        Thread.sleep(4000);
+        driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
         getDropDownListByText(Locators.DROP_DOWN_LIST_SORT_BY, "Views");
     }
 

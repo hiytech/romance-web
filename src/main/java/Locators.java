@@ -3,7 +3,7 @@ import org.openqa.selenium.By;
 public class Locators {
 
     // Main page
-    public static final By IFRAME = By.xpath("//iframe");
+    public static final By IFRAME = By.xpath("//iframe[@src='https://www.youtube.com/embed/RRECuJzm3IY?start=85']");
     public static final By IFRAME_PLAY_BUTTON = By.cssSelector("button.ytp-large-play-button.ytp-button");
 
     // Blog page

@@ -18,7 +18,7 @@ public class BaseUI {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
         driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait = new WebDriverWait(driver, 15);
         action = new Actions(driver);
         driver.manage().window().maximize();
         driver.get(mainUrl);

@@ -1,4 +1,5 @@
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
 public class MainPageTests extends BaseUI {
@@ -6,8 +7,8 @@ public class MainPageTests extends BaseUI {
 
 
     @Test
-    public void iframeTest() throws InterruptedException {
-        Thread.sleep(2000);
+    public void iframeTest() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(Locators.IFRAME));
         iframe = driver.findElement(Locators.IFRAME);
         driver.switchTo().frame(iframe);
         //driver.findElement(Locators.IFRAME_PLAY_BUTTON).click(); - simple click often doesn't work
