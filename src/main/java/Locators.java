@@ -26,6 +26,13 @@ public class Locators {
     public static final By TEXT_FIELD_PASSWORD = By.cssSelector("input#password");
     public static final By TEXT_FIELD_NICKNAME = By.cssSelector("input#nickname");
     public static final By TEXT_FIELD_PHONE = By.cssSelector("input[name='data[phone]']");
+    public static final By SELECT_DAY_DROP_DOWN = By.cssSelector("#daySelect");
+    public static final By SELECT_DAY_VALUE = By.xpath("//li[@data-handler='selectDay']//a[text()='2']");
+    public static final By SELECT_MONTH_DROP_DOWN = By.cssSelector("#monthSelect");
+    public static final By SELECT_MONTH_VALUE = By.xpath("//li[@data-handler='selectMonth']//a[text()='May']");
+    public static final By SELECT_YEAR_DROP_DOWN = By.cssSelector("#yearSelect");
+    public static final By SELECT_YEAR_VALUE = By.xpath("//li[@data-handler='selectYear']//a[text()='2002']");
+
 
     // Search page
     public static final By LINK_SEARCH = By.xpath("//a[@href='https://romanceabroad.com/users/search']");

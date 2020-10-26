@@ -16,7 +16,7 @@ public class Data {
     // Registration data
     public static final String email = "sk@gmail.com";
     public static final String password = "12345dfg";
-    public static final String nickname = "tony34";
+    public static final String nickname = "tony";
     public static final String phone = "4565668888";
 
     // Search data

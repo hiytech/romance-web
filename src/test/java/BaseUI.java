@@ -1,8 +1,6 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -12,6 +10,13 @@ public class BaseUI {
     WebDriverWait wait;
     Actions action;
     String mainUrl = "https://romanceabroad.com/";
+    MainPage mainPage;
+    SearchPage searchPage;
+    BlogPage blogPage;
+    GiftsPage giftsPage;
+    HowWeWorkPage howWeWorkPage;
+    MediaPage mediaPage;
+    TourPage tourPage;
 
 
     @BeforeMethod
@@ -20,6 +25,14 @@ public class BaseUI {
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, 15);
         action = new Actions(driver);
+        mainPage = new MainPage(driver, wait);
+        searchPage = new SearchPage(driver, wait);
+        blogPage = new BlogPage(driver, wait);
+        giftsPage = new GiftsPage(driver, wait);
+        howWeWorkPage = new HowWeWorkPage(driver, wait);
+        mediaPage = new MediaPage(driver, wait);
+        tourPage = new TourPage(driver, wait);
+
         driver.manage().window().maximize();
         driver.get(mainUrl);
     }
@@ -33,21 +46,7 @@ public class BaseUI {
 
     }
 
-    // Helper methods for Drop Down list selection
-    public void getDropDownListByIndex(By locator, int index) {
-        Select select = new Select(driver.findElement(locator));
-        select.selectByIndex(index);
-    }
 
-    public void getDropDownListByValue(By locator, String value) {
-        Select select = new Select(driver.findElement(locator));
-        select.selectByValue(value);
-    }
-
-    public void getDropDownListByText(By locator, String text) {
-        Select select = new Select(driver.findElement(locator));
-        select.selectByVisibleText(text);
-    }
 
 
 }
